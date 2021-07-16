@@ -9,10 +9,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  let sum = a + b;
-  let sumString = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
+  let newSum = a + b;
+  let sumString = 'The sum of ' + a + ' and ' + b + ' is ' + newSum + '.';
   console.log(sumString);
-  return [sum, sumString];
+  return [newSum, sumString];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -30,10 +30,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  let multiply = a * b;
-  let multiplyString = 'The product of ' + a + ' and ' + b + ' is ' + multiply + '.';
+  let newMultiply = a * b;
+  let multiplyString = 'The product of ' + a + ' and ' + b + ' is ' + newMultiply + '.';
   console.log(multiplyString);
-  return [multiply, multiplyString];
+  return [newMultiply, multiplyString];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -56,11 +56,11 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
   let newSum = sum(a, sum(b, c)[0])[0];
   let newMultiply = multiply(a, multiply(b, c)[0])[0];
-  let sumString = a + ' and ' + b + ' and ' + c + ' sum to ' + sum + '.';
+  let sumString = a + ' and ' + b + ' and ' + c + ' sum to ' + newSum + '.';
   console.log(sumString);
-  let multiplyString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiply + '.';
+  let multString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + newMultiply + '.';
   console.log(multiplyString);
-  return [newSum, newMultiply, sumString, multiplyString];
+  return [newSum, newMultiply, sumString, multString];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -87,7 +87,7 @@ function sumArray(sumArr) { //eslint-disable-line
     newSum = sum(newSum, i)[0];
   }
   console.log(newSum);
-  let sumString = sumArr.join() + ' was passed in as an array of numbers, and ' + sum + 'is their sum.';
+  let sumString = sumArr.join() + ' was passed in as an array of numbers, and ' + newSum + 'is their sum.';
   return [newSum, sumString];
 }
 // testSumArray(testArray); --> testSumArray which has if(sumArray) the certain requirements --> testing sum(sumArr)
@@ -110,7 +110,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let newMultiply = 0;
+  for (let i = 0; i < multArr.length; i++) {
+    newMultiply = sum(newMultiply, i)[0];
+  }
+  console.log(newMultiply);
+  let multString = 'The numbers ' + multArr.join() + ' have a product of ' + newMultiply + '.';
+  return [newMultiply, multString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
