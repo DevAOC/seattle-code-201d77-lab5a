@@ -149,6 +149,9 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
     newMultiply = multiply(newMultiply, i)[0];
   }
   console.log(newMultiply);
+  if (dynamicArray.length < 1) {
+    newMultiply = 0;
+  }
   let multString = 'The numbers ' + multArr.join() + ' have a product of ' + newMultiply + '.';
   return [newMultiply, multString];
 }
