@@ -144,7 +144,7 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-  let newMultiply = 0;
+  let newMultiply = 1;
   for (let i = 0; i < dynamicArray.length; i++) {
     newMultiply = multiply(newMultiply, i)[0];
   }
